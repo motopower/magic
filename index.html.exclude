@@ -1,0 +1,385 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>摩煥力輛</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/blue.css" rel="stylesheet" type="text/css" media="all" />
+<!----font-Awesome----->
+   	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- start plugins -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--start slider -->
+    <link rel="stylesheet" href="css/fwslider.css" media="all">
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+    <script src="js/fwslider.js"></script>
+<!--end slider -->
+<!-- must have -->
+<link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="js/allinone_carousel.js" type="text/javascript"></script>
+<!--[if IE]><script src="js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
+<!-- must have -->
+	<script>
+		jQuery(function() {
+
+			jQuery('#allinone_carousel_charming').allinone_carousel({
+				skin: 'charming',
+				width: 990,
+				height: 454,
+				responsive:true,
+				autoPlay: 3,
+				resizeImages:true,
+				autoHideBottomNav:false,
+				showElementTitle:false,
+				verticalAdjustment:50,
+				showPreviewThumbs:false,
+				//easing:'easeOutBounce',
+				numberOfVisibleItems:5,
+				nextPrevMarginTop:23,
+				playMovieMarginTop:0,
+				bottomNavMarginBottom:-10
+			});		
+		});
+	</script>
+<!-- Owl Carousel Assets -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#owl-demo").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					autoPlay : true,
+					navigation : true,
+					navigationText : ["", ""],
+					rewindNav : false,
+					scrollPerPage : false,
+					pagination : false,
+					paginationNumbers : false,
+				});
+
+			});
+		</script>
+		<!-- //Owl Carousel Assets -->
+<!-- start circle -->
+<script>
+(function($){
+	$.fn.percentPie = function(options){
+
+		var settings = $.extend({
+			width: 100,
+			trackColor: "EEEEEE",
+			barColor: "E2534B",
+			barWeight: 30,
+			startPercent: 0,
+			endPercent: 1,
+			fps: 60
+		}, options);
+
+		this.css({
+			width: settings.width,
+			height: settings.width
+		});
+
+		var	that = this,
+			hoverPolice = false,
+			canvasWidth = settings.width,
+			canvasHeight = canvasWidth,
+			id = $('canvas').length,
+			canvasElement = $('<canvas id="'+ id +'" width="' + canvasWidth + '" height="' + canvasHeight + '"></canvas>'),
+			canvas = canvasElement.get(0).getContext("2d"),
+			centerX = canvasWidth/2,
+			centerY = canvasHeight/2,
+			radius = settings.width/2 - settings.barWeight/2;
+			counterClockwise = false,
+			fps = 1000 / settings.fps,
+			update = .01;
+			this.angle = settings.startPercent;
+
+		this.drawArc = function(startAngle, percentFilled, color){
+			var drawingArc = true;
+			canvas.beginPath();
+			canvas.arc(centerX, centerY, radius, (Math.PI/180)*(startAngle * 360 - 90), (Math.PI/180)*(percentFilled * 360 - 90), counterClockwise);
+			canvas.strokeStyle = color;
+			canvas.lineWidth = settings.barWeight;
+			canvas.stroke();
+			drawingArc = false;
+		}
+
+		this.fillChart = function(stop){
+			var loop = setInterval(function(){
+				hoverPolice = true;
+				canvas.clearRect(0, 0, canvasWidth, canvasHeight);
+
+				that.drawArc(0, 360, settings.trackColor);
+				that.angle += update;
+				that.drawArc(settings.startPercent, that.angle, settings.barColor);
+
+				if(that.angle > stop){
+					clearInterval(loop);
+					hoverPolice = false;
+				}
+			}, fps);
+		}
+
+		this.mouseover(function(){
+			if(hoverPolice == false){
+				that.angle = settings.startPercent;
+				that.fillChart(settings.endPercent);
+			}
+		});
+
+		this.fillChart(settings.endPercent);
+		this.append(canvasElement);
+		return this;
+	}
+}(jQuery));
+
+$(document).ready(function() {
+
+	$('.google').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .9,
+		fps: 60
+	});
+  
+  $('.moz').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .75,
+		fps: 60
+	});
+  
+  $('.safari').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "#76C7C0",
+		barWeight: 20,
+		endPercent: .5,
+		fps: 60
+	});
+    
+});
+</script>
+</head>
+<body>
+<div class="header_bg">
+<div class="container">
+	<div class="header">
+		<div class="logo">
+			<a href="index.html"><img src="images/logo.png" alt=""/></a>
+		</div>
+		<div class="h_menu">
+		<a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+		<nav>
+		<ul class="menu list-unstyled">
+			<li class="activate"><a href="index.html">回首頁</a></li>
+			
+			<li><a href="#">產品</a>
+			<ul class="sub-menu list-unstyled">
+				<li><a href="prod.aspx?type=機車型號">機車型號</a></li>
+				<li><a href="prod.aspx?type=機車周邊">機車周邊</a></li>
+				<li><a href="prod.aspx?type=二手車專區">二手車專區</a></li>	 
+			</ul>			
+			</li>
+			
+			<li><a href="#">服務</a>
+			<ul class="sub-menu list-unstyled">
+				<li><a href="order.html">預約服務</a></li>
+				<li><a href="order2.html">道路救援</a></li>
+				</ul>			
+			</li>
+		 
+			<li><a href="#">活動消息</a>
+			<ul class="sub-menu list-unstyled">
+				<li><a href="news.aspx?type=最新消息">最新消息</a></li>
+				 <li><a href="news.aspx?type=優惠訊息">優惠訊息</a></li>
+				 <li><a href="news.aspx?type=活動消息">活動消息</a></li>
+				</ul>			
+			</li>
+	
+			<li><a href="maintenance.html">保養資訊</a></li>
+			<li><a href="store.html">商家介紹</a></li>
+			
+			<li><a href="url.html">相關連結</a></li>
+			 
+		</ul>
+		</nav>
+		<script src="js/menu.js" type="text/javascript"></script>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+    <div id="fwslider"><!-- start slider -->
+        <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+                    <img src="images/1.jpg">
+                <!-- /Slide image -->
+                <!-- Texts container -->
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <!-- Text title -->
+                        <h4 class="title">YAMAHA 勝鴻車業</h4>
+                        <!-- /Text title -->
+                        <!-- Text description -->
+                       <!-- <p class="description">簡易平台設計,清楚標示自身與該店家位置。</p>-->
+                        <!-- /Text description -->
+                    </div>
+                </div>
+                 <!-- /Texts container -->
+            </div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide">
+                <img src="images/2.jpg">
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <h4 class="title">YAMAHA 勝鴻車業</h4>
+                        <p class="description">透過網頁快速連結店家並選擇服務項目</p>
+                    </div>
+                </div>
+            </div>
+            <!--/slide -->
+        </div>
+        <div class="timers"></div>
+        <div class="slidePrev"><span></span></div>
+        <div class="slideNext"><span></span></div>
+    </div><!--/slider -->
+<div class="main_bg"><!-- start main -->
+<div class="container">
+	<div class="main_grid">
+		<div class="top_grid"><!-- start top_grid -->
+				<div class="col-md-10 span1_of_1">
+						<h3>「勝鴻車業」</h3>
+						<p>是已經營2年的YAMAHA經銷商，主要銷售YAMAHA的車款、部分二手車轉售以及機車保養、維修等，在售後服務方面也有十分完善的保障</p>
+				</div>
+				<div class="col-md-2 span1_of_2">
+					<a class="btn" href="#">公司簡介</a>
+				</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="span_of_4"><!-- start span_of_4 -->
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span class="active"><i class="fa fa-thumbs-o-up"></i></span>
+					<h3>產品</h3>
+					<p>產品詳細介紹頁面提供 車色展示、性能規格 產品資訊。</p>
+					<div class="read_more">
+						<a class="btn btn-2 active" href="prod2.html">view more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-lock"></i></span>
+					<h3>活動消息</h3>
+					<p>近期的促銷優惠與官方活動介紹,最新的消息會呈現在最上筆。</p>
+					<div class="read_more">
+						<a class="btn  btn-2b" href="news.html">view more</a>
+					</div>	
+				</div>	
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-flag"></i></span>
+					<h3>商家介紹</h3>
+					<p>商家介紹頁面，內容包含商家的簡介、品牌的主張與品牌的價值。</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="store.html">view more</a>
+					</div>		
+				</div>
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					<span><i class="fa fa-flask"></i></span>
+					<h3>保養資訊</h3>
+					<p>進入保養資訊頁面，提供保養相關資訊，如更換機油與空濾。</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="maintenance.html">view more</a>
+					</div>						
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div><!-- end span_of_4 -->
+	</div>
+</div>
+</div>
+<div class="main1_bg"><!-- start main1 --></div>
+ 
+<div class="footer_bg"><!-- start footer -->
+<div class="container">
+	<div class="footer">
+		<div class="col-md-4 footer1_of_3">
+			<div class="f_logo">
+				<a href="index.html"><img src="images/logo.png" alt=""/></a>
+			</div>		
+			<p class="f_para">在台灣社會裡，機車是大部分人的第一部交通工具，但很少有人清楚了解各式機車的優缺點，進而找到適合自身需求的產品，而機車廠商也缺乏管道向需求者推銷，因此，有了摩煥力輛一個實用的機車網站，幫助需求者找到完美的第一輛車，也幫助廠商增加客源。</p>
+			<p>Phone:&nbsp;<span>(02)2985-6612</span></p>
+			<span class="">Email:&nbsp;motorbike@gmail.com</span>
+		</div>
+		<div class="col-md-2 footer1_of_3">
+			<h4>機車官網</h4>
+			<ul class="list-unstyled f_list">
+				<li><a href="http://www.kymco.com.tw/" target="_blank">KYMCO 光陽機車</a></li>
+				<li><a href="http://www.sym.com.tw" target="_blank">SYM 三陽機車</a></li>
+				<li><a href="http://www.aeonmotor.com.tw/home.php" target="_blank">Aeon 宏佳騰機車</a></li>
+				<li><a href="https://www.yamaha-motor.com.tw/" target="_blank">YAMAHA 台灣山葉機車</a></li>
+				<li><a href="http://www.suzukimotor.com.tw/" target="_blank">SUZUKI 台鈴機車</a></li>
+			 
+			</ul>
+		</div>
+		<div class="col-md-2 footer1_of_3">
+			<h4>網站優勢</h4>
+			<ul class="list-unstyled f_list">
+				<li><a href="#">簡易平台設計</a></li>
+				<li><a href="#">快速選擇服務項目</a></li>
+				<li><a href="#">可即時更新商品</a></li>
+				 
+			</ul>
+		</div>
+		 
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+<div class="footer1_bg"><!-- start footer1 -->
+<div class="container">
+	<div class="footer1">
+		<div class="copy pull-left">
+			<p class="link"><span>&#169; All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></span></p>
+		</div>
+		<div class="soc_icons pull-right">
+			<ul class="list-unstyled text-center">
+			 
+				<li><a href="https://www.facebook.com/%E5%8B%9D%E9%B4%BB%E8%BB%8A%E6%A5%AD-Sheng-Hong-1072501959455178/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			 
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>
